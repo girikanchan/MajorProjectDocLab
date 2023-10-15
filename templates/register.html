@@ -31,7 +31,8 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+
 
   <!-- 
     - preload images
@@ -43,10 +44,34 @@
 
 <body>
 
+    <div class="container">
+      <header>Regisration</header>
+      <form action="#">
+        <div class="form first">
+          <div class="details personal">
+            <span class="title">Personal Details</span>
+            <div class="fields">
+              <div class="input-filed">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name" required>
+              </div>
+              <div class="input-filed">
+                <label>Date of Birth</label>
+                <input type="date" placeholder="Enter Birth Date " required>
+              </div>
+              <div class="input-filed">
+                <label>Email</label>
+                <input type="text" placeholder="Enter your Email" required>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   <!-- 
     - custom js link
   -->
-  
+
   <script src="{% static 'js/register.js' %}"></script>
 
   <!-- 
