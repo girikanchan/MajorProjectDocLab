@@ -1,18 +1,18 @@
-const form = document.querySelector("form"),
-        nextBtn= document.querySelector(".nextBtn"),
-        backBtn = document.querySelector(".backBtn"),
-        allInput= document.querySelectorAll(".first input");
+const form = document.querySelector("form");
+const nextBtn = form.querySelector(".nextBtn");
+const backBtn = form.querySelector(".backBtn");
+const allInput = form.querySelectorAll(".first input");
 
-nextBtn.addEventListener("click", ()=>{
+nextBtn.addEventListener("click", () => {
     allInput.forEach(input => {
-        if(input.value != ""){
+        if (input.value !== "") {
             form.classList.add('secActive');
-        }else{
+        } else {
             form.classList.remove('secActive');
         }
-    })
-})
+    });
+});
 
-backBtn.addEventListener("click", () =>{
+backBtn.addEventListener("click", () => {
     form.classList.remove('secActive');
-})
+});
