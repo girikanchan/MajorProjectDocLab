@@ -12,3 +12,6 @@ def login(request):
 
 def main(request):
     return render(request,'main.html')
+
+def diabetes(request):
+    return render(request,'diabetes.html')

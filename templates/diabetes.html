@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Diabetes Data Collection form for diabetes prediction</title>
+    <link rel="stylesheet" href="{% static 'css/diabetes.css' %}" />
+  </head>
+  <body>
+    <div class="container">  
+		<form class="contact" action="" method="post">
+			<h3>Diabetes Data Collection Form</h3>
+			
+			<div class="col50 colleft">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="pname">Patient name</label>
+						<input placeholder="Patient name" type="text" required autofocus>
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="">Phone number</label>
+						<input placeholder="Phone number" type="tel" required>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="col50 colleft">
+				<div class="wd50">
+					<label name="">Having history of diabetes paitent in family</label>
+					<select>
+						<option value=" ">Yes</option>
+						<option value=" ">No</option>
+					</select> 
+				</div>
+				<div class="wd100">
+					<label name="">Gender</label>
+					<select>
+						<option value=" ">Male</option>
+						<option value=" ">Female</option>
+						<option value=" ">others</option>
+					</select> 
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="">Having blood pressure</label>
+					<select>
+						<option value=" ">Normal</option>
+						<option value=" ">Low</option>
+						<option value=" ">High</option>
+					</select> 
+				</div>
+				<div class="wd100">
+					<label name="">Do you smoke?</label>
+					<select>
+						<option value=" ">Yes</option>
+						<option value=" ">No</option>
+					</select> 
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="">Do you Excerice?</label>
+					<select>
+						<option value=" ">No</option>
+						<option value=" ">Regular</option>
+					</select> 
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="">Your Diet?</label>
+					<select>
+						<option value=" ">Poor</option>
+						<option value=" ">Healthy</option>
+					</select> 
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="">Body Mass Index(BMI)</label>
+					<textarea placeholder="BMI = Weight (in kg)/(Weight)^2 (in meter)" required></textarea>
+				</div>
+                <div class="wd100">
+					<label name="">Glucose level of before eating(FBS(Fasting Blood Sugar level))</label>
+					<textarea placeholder="FBS(Fasting Blood Sugar level)" required></textarea>
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="">Value of HbA1c</label>
+					<textarea placeholder="Insert text here ..." required></textarea>
+				</div>
+			</div>
+			
+			<div class="wd100">
+				<button name="submit" type="submit" id="" data-submit="...Sending">Submit</button>
+			</div>
+		</form>
+	</div>
+
+
+  </body>
+</html>
