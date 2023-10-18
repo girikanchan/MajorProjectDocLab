@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +11,8 @@
   <body>
     <div class="container">  
 		<form class="contact" action="" method="post">
+            {% csrf_token %}
+
 			<h3>Diabetes Data Collection Form</h3>
 			
 			<div class="col50 colleft">
@@ -108,11 +111,18 @@
 			</div>
 			
 			<div class="wd100">
-				<button name="submit" type="submit" id="" data-submit="...Sending">Submit</button>
+				<button name="submit" type="submit" onclick="openPopup()" id="" data-submit="...Sending">Submit</button>
+                <div class="popup" id="popup">
+                    <img src="{% static 'images/result.png' %}">
+                    <h2> Predication Result</h2>
+                    <p> Your result is you are not Diabetic.</p>
+                    <button type="button" onclick="closePopup()">Done</button>
+                </div>
 			</div>
 		</form>
-	</div>
 
+	</div>
+    <script src="{% static 'js/diabetes.js' %}"></script>
 
   </body>
 </html>
