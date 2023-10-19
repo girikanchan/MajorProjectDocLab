@@ -24,7 +24,7 @@
 				</div>
 				<div class="col50 colright">
 					<div class="wd50">
-						<label name="">Phone number</label>
+						<label name="pphone">Phone number</label>
 						<input placeholder="Phone number" type="tel" required>
 					</div>
 				</div>
@@ -35,36 +35,35 @@
 			
 			<div class="col50 colleft">
 				<div class="wd50">
-					<label name="">Having history of diabetes paitent in family</label>
+					<label name="history">Having history of diabetes paitent in family</label>
 					<select>
-						<option value=" ">Yes</option>
-						<option value=" ">No</option>
+						<option value="yes">Yes</option>
+						<option value="no">No</option>
 					</select> 
 				</div>
 				<div class="wd100">
-					<label name="">Gender</label>
+					<label name="gender">Gender</label>
 					<select>
-						<option value=" ">Male</option>
-						<option value=" ">Female</option>
-						<option value=" ">others</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
 					</select> 
 				</div>
 			</div>
 
 			<div class="col50 colright">
 				<div class="wd100">
-					<label name="">Having blood pressure</label>
+					<label name="bp">Having blood pressure</label>
 					<select>
-						<option value=" ">Normal</option>
-						<option value=" ">Low</option>
-						<option value=" ">High</option>
+						<option value="normal">Normal</option>
+						<option value="low">Low</option>
+						<option value="high">High</option>
 					</select> 
 				</div>
 				<div class="wd100">
-					<label name="">Do you smoke?</label>
+					<label name="smoke">Do you smoke?</label>
 					<select>
-						<option value=" ">Yes</option>
-						<option value=" ">No</option>
+						<option value="yes">Yes</option>
+						<option value="no">No</option>
 					</select> 
 				</div>
 			</div>
@@ -72,20 +71,20 @@
 			<div class="wd100"><hr></div>
 			<div class="col50 colleft">
 				<div class="wd100">
-					<label name="">Do you Excerice?</label>
+					<label name="exe">Do you Excerice?</label>
 					<select>
-						<option value=" ">No</option>
-						<option value=" ">Regular</option>
+						<option value="no">No</option>
+						<option value="yes">Regular</option>
 					</select> 
 				</div>
 			</div>
 
 			<div class="col50 colright">
 				<div class="wd100">
-					<label name="">Your Diet?</label>
+					<label name="diet">Your Diet?</label>
 					<select>
-						<option value=" ">Poor</option>
-						<option value=" ">Healthy</option>
+						<option value="poor">Poor</option>
+						<option value="Healthy" >Healthy</option>
 					</select> 
 				</div>
 			</div>
@@ -94,30 +93,32 @@
 			
 			<div class="col50 colleft">
 				<div class="wd100">
-					<label name="">Body Mass Index(BMI)</label>
+					<label name="bmi">Body Mass Index(BMI)</label>
 					<textarea placeholder="BMI = Weight (in kg)/(Weight)^2 (in meter)" required></textarea>
 				</div>
                 <div class="wd100">
-					<label name="">Glucose level of before eating(FBS(Fasting Blood Sugar level))</label>
+					<label name="fbs">Glucose level of before eating(FBS(Fasting Blood Sugar level))</label>
 					<textarea placeholder="FBS(Fasting Blood Sugar level)" required></textarea>
 				</div>
 			</div>
 
 			<div class="col50 colright">
 				<div class="wd100">
-					<label name="">Value of HbA1c</label>
+					<label name="hba">Value of HbA1c</label>
 					<textarea placeholder="Insert text here ..." required></textarea>
 				</div>
 			</div>
 			
 			<div class="wd100">
 				<button name="submit" type="submit" onclick="openPopup()" id="" data-submit="...Sending">Submit</button>
+				{% if result %}
                 <div class="popup" id="popup">
                     <img src="{% static 'images/result.png' %}">
                     <h2> Predication Result</h2>
-                    <p> Your result is you are not Diabetic.</p>
+                    <p> Your result is you are {{result}}.</p>
                     <button type="button" onclick="closePopup()">Done</button>
                 </div>
+				{% endif %}
 			</div>
 		</form>
 
