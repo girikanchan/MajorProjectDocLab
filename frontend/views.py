@@ -1,5 +1,10 @@
 from django.shortcuts import render
 import requests
+from joblib import load
+from django.shortcuts import render
+from django.http import HttpResponse
+
+model = load('./savedmodel/knn_model.joblib')
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -13,11 +18,6 @@ def login(request):
 def main(request):
     return render(request,'main.html')
 
-from joblib import load
-from django.shortcuts import render
-from django.http import HttpResponse
-
-model = load('./savedmodel/model.joblib')
 
 def diabetes(request):
     if request.method == 'POST':

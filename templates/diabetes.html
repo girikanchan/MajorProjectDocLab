@@ -110,15 +110,14 @@
 			</div>
 			
 			<div class="wd100">
-				<button name="submit" type="submit" onclick="openPopup()" id="" data-submit="...Sending">Submit</button>
-				{% if result %}
+				<button name="submit" type="submit" onclick="openPopup()" id="" data-submit="...Sending">Submit </button>
                 <div class="popup" id="popup">
                     <img src="{% static 'images/result.png' %}">
                     <h2> Predication Result</h2>
                     <p> Your result is you are {{result}}.</p>
                     <button type="button" onclick="closePopup()">Done</button>
                 </div>
-				{% endif %}
+				
 			</div>
 		</form>
 
