@@ -45,36 +45,37 @@
 </head>
 
 <body>
+    {% csrf_token %}
     <div class="container">
         <header>Registration</header>
-        <form action="#">
+        <form id="register-form" action="{% url 'register' %}" method="post">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <label >Full Name</label>
+                            <input type="text" name="name" placeholder="Enter your name" required>
                         </div>
                         <div class="input-field">
                             <label>Date of Birth</label>
-                            <input type="date" placeholder="Enter Birth Date" required>
+                            <input type="date" name="date_of_birth" placeholder="Enter Birth Date" required>
                         </div>
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your Email" required>
+                            <input type="text" name="email" placeholder="Enter your Email" required>
                         </div>
                         <div class="input-field">
                             <label>Mobile Number</label>
-                            <input type="number" placeholder="Enter your contact Number" required>
+                            <input type="number" name="contno" placeholder="Enter your contact Number" required>
                         </div>
                         <div class="input-field">
                             <label>Gender</label>
-                            <input type="text" placeholder="Enter your Gender" required>
+                            <input type="text" name="gender" placeholder="Enter your Gender" required>
                         </div>
                         <div class="input-field">
                             <label>Occupation</label>
-                            <input type="text" placeholder="Enter your Occupation" required>
+                            <input type="text" name="occupation" placeholder="Enter your Occupation" required>
                         </div>
                     </div>
                 </div>
@@ -84,23 +85,23 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>ID Type</label>
-                            <input type="text" placeholder="Enter type of ID" required>
+                            <input type="text" name="id_type" placeholder="Enter type of ID" required>
                         </div>
                         <div class="input-field">
                             <label>Issuing Authority</label>
-                            <input type="text" placeholder="Issuing Authority e.g. Income tax department" required>
+                            <input type="text" name="id_issue" placeholder="Issuing Authority e.g. Income tax department" required>
                         </div>
                         <div class="input-field">
                             <label>ID Number</label>
-                            <input type="text" placeholder="Enter your ID Number" required>
+                            <input type="text" name="id_number" placeholder="Enter your ID Number" required>
                         </div>
                         <div class="input-field">
                             <label>Issued Date</label>
-                            <input type="date" placeholder="Enter issue date" required>
+                            <input type="date" name="issue_date" placeholder="Enter issue date" required>
                         </div>
                         <div class="input-field">
                             <label>Issued State</label>
-                            <input type="text" placeholder="Enter state" required>
+                            <input type="text" name="issue_state" placeholder="Enter state" required>
                         </div>
                     </div>
                     <button class="nextBtn">
@@ -115,27 +116,27 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Address Type</label>
-                            <input type="text" placeholder="e.g. permanent, Temporary, etc">
+                            <input type="text" name="add_type" placeholder="e.g. permanent, Temporary, etc">
                         </div>
                         <div class="input-field">
                             <label>Address</label>
-                            <input type="text" placeholder="Enter Address">
+                            <input type="text" name="address" placeholder="Enter Address">
                         </div>
                         <div class="input-field">
                             <label>Nationality</label>
-                            <input type="text" placeholder="Enter your Nationality" required>
+                            <input type="text" name="nation" placeholder="Enter your Nationality" required>
                         </div>
                         <div class="input-field">
                             <label>State</label>
-                            <input type="text" placeholder="Enter State" required>
+                            <input type="text" name="state" placeholder="Enter State" required>
                         </div>
                         <div class="input-field">
                             <label>District</label>
-                            <input type="text" placeholder="Enter District" required>
+                            <input type="text" name="district" placeholder="Enter District" required>
                         </div>
                         <div class="input-field">
                             <label>Pincode</label>
-                            <input type="number" placeholder="Enter Pincode">
+                            <input type="number" name="pincode" placeholder="Enter Pincode">
                         </div>
                     </div>
                 </div>
@@ -144,11 +145,11 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Password</label>
-                            <input type="password" placeholder="Password" required>
+                            <input type="password" name="password" placeholder="Password" required>
                         </div>
                         <div class="input-field">
                             <label>Confirm Password</label>
-                            <input type="password" placeholder="Confirm Password" required>
+                            <input type="password" name="password2" placeholder="Confirm Password" required>
                         </div>
                     </div>
                 </div>
@@ -162,7 +163,7 @@
                         <span class="btnText">Verify Credential</span>
                         <i class="fa-solid fa-circle-check"></i>
                     </button>
-                    <button class="submit" type="submit">
+                    <button class="submit" type="submit" onclick="redirectToLogin()">
                         <span class="submit">Submit</span>
                         <i class="fa-solid fa-file-import"></i>
                     </button>

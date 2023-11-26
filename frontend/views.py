@@ -3,13 +3,73 @@ import requests
 from joblib import load
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+from account.models import User 
+from django.shortcuts import render, redirect
+
 
 model = load('./savedmodel/knn_model.joblib')
 # Create your views here.
 def index(request):
     return render(request,'index.html')
-
+@csrf_exempt
 def register(request):
+    if request.method == 'POST':
+        data = request.POST
+
+        # Extract data from the request
+        name = data.get('name')
+        email = data.get('email')
+        password = data.get('password')
+        confirm_password = data.get('password2')
+        contact = data.get('contno')
+        address = data.get('address')
+        city = data.get('district')
+        state = data.get('state')
+        pincode = data.get('pincode')
+        date_of_birth = data.get('date_of_birth')
+        add_type = data.get('add_type')
+        nation = data.get('nation')
+        nationality = data.get('nationality')
+        id_type = data.get('id_type')
+        id_no = data.get('id_number')
+        issue_date = data.get('issue_date')
+        id_issue = data.get('id_issue')
+        gender = data.get('gender')
+        occupation = data.get('occupation')
+        issue_state = data.get('issue_state')
+        
+
+        # Create a new user instance
+        new_user = User(
+            name=name,
+            email=email,
+            password=password,
+            confirm_password=confirm_password,
+            contact=contact,
+            add_type=add_type,
+            address=address,
+            city=city,
+            state=state,
+            pincode=pincode,
+            date_of_birth=date_of_birth,
+            nation=nation,
+            nationality=nationality,
+            id_type=id_type,
+            id_no=id_no,
+            issue_date=issue_date,
+            issue_state=issue_state,
+            id_issue=id_issue,
+            gender=gender,
+            occupation=occupation,    
+        )
+
+        # Save the user to the database
+        new_user.save()
+        return redirect('login')
+        #return JsonResponse({'message': 'User registered successfully'})
+
     return render(request,'register.html')
 
 def login(request):
